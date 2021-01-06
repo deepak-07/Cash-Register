@@ -11,11 +11,13 @@
 <body>
     <h1>Cash Register</h1>
     <div class="input">
-        <input class="inputBox" id="bill-amt" placeholder="Enter your bill amount" onChange={billAmountHandler} /> 
-        <input class="inputBox" id="amt-paid" placeholder="Enter the cash you paid" onChange={amountPaidHandler} />
+        <input class="inputBox" id="bill-amt" placeholder="Enter your bill amount" /> 
+        <input class="inputBox" id="amt-paid" placeholder="Enter the cash you paid" />
         <button id="btn">Calculate</button>
     </div>
-        
+    <div class="output">
+        <div class="noOfNotes"></div>
+    </div>
 </body>
 <script src="app.js"></script>
 
