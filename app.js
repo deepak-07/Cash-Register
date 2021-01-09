@@ -3,6 +3,7 @@ var bill = document.querySelector("#cost-input");
 var btn = document.querySelector("#btn");
 var mytable = document.querySelector("#table");
 var otpt = document.querySelector("#output");
+var change = document.querySelector("#changeAmount");
 var resetBtn = document.querySelector("#resetBtn");
 var notearray = ['2000', '500', '200', '100', '50', '20', '10', '5', '2', '1'];
 
@@ -34,6 +35,8 @@ function calc() {
         } else if (cashamount === billamount) {
             alert("Thanku !! You Have Paid Right Amount !");
         } else if (totalchange > 0) {
+            change.innerText = "Return change : " +
+            totalchange;
             var j = 1;
             for (i = 0; i <= notearray.length; i++) {
                 while (totalchange >= notearray[i]) {
@@ -58,7 +61,7 @@ resetBtn.addEventListener("click", reset);
 function reset() {
     cash.value = "";
     bill.value = "";
-    
+
     while (mytable.rows.length > 1) {
         mytable.deleteRow(1);
     }
