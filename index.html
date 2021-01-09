@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="rupee-sign-solid.svg">
     <title>Get Cash</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    
 
 </head>
 
@@ -15,21 +14,21 @@
     <h1>Cash Register</h1>
 
     <div class="input">
-        <input id="cost-input" placeholder="   Enter Bill">
-        <input id="paid-input" placeholder="   Enter Cash">
+        <span class="side-heading"> Bill : </span> <input id="cost-input" placeholder="   Enter Bill Amount">
+        <span class="side-heading"> Paid: </span><input id="paid-input" placeholder="   Enter Cash Amount">
     </div>
 
     <button class="button" id="btn"> Check 
     </button>
-
+    <button class="button" id="resetBtn"> Reset </button>
     <div id="output">
+        <h3>Get minimum number of notes</h3>
         <table id="table">
             <tr>
-                <th> Note</th>
-                <th> Count</th>
+                <th> Note </th>
+                <th> Count </th>
             </tr>
-            <tr></tr>
-
+           
         </table>
     </div>
 

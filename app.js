@@ -3,13 +3,13 @@ var bill = document.querySelector("#cost-input");
 var btn = document.querySelector("#btn");
 var mytable = document.querySelector("#table");
 var otpt = document.querySelector("#output");
-
-var notearray = ['2000', '500', '100', '50', '20', '10', '5', '2', '1'];
+var resetBtn = document.querySelector("#resetBtn");
+var notearray = ['2000', '500', '200', '100', '50', '20', '10', '5', '2', '1'];
 
 var cashamount;
 var billamount;
 var totalchange;
-var noOfNotes = [];
+
 //getting value of input
 cash.addEventListener("change", function() {
     cashamount = cash.value;
@@ -21,6 +21,7 @@ bill.addEventListener("change", function() {
 
 btn.addEventListener("click", calc);
 
+//processing and output
 function calc() {
     if (cashamount === undefined || billamount === undefined) {
         alert("Please enter the amount");
@@ -29,7 +30,7 @@ function calc() {
         console.log(billamount, cashamount, totalchange);
 
         if (totalchange < 0) {
-            alert("You Have to pay " + Math.abs(totalchange) +" More !!");
+            alert("You Have to pay " + Math.abs(totalchange) + " More !!");
         } else if (cashamount === billamount) {
             alert("Thanku !! You Have Paid Right Amount !");
         } else if (totalchange > 0) {
@@ -37,9 +38,6 @@ function calc() {
             for (i = 0; i <= notearray.length; i++) {
                 while (totalchange >= notearray[i]) {
                     var notes = Math.floor(totalchange / notearray[i])
-                    console.log(`${notes} notes of ${notearray[i]}`)
-    
-                    console.log(noOfNotes);
                     var row = mytable.insertRow(j);
                     var cell1 = row.insertCell(0);
                     var cell2 = row.insertCell(1);
@@ -51,6 +49,17 @@ function calc() {
             }
 
         }
-      
+
+    }
+}
+
+resetBtn.addEventListener("click", reset);
+
+function reset() {
+    cash.value = "";
+    bill.value = "";
+    
+    while (mytable.rows.length > 1) {
+        mytable.deleteRow(1);
     }
 }

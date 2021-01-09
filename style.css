@@ -1,3 +1,38 @@
-body{
+body {
     background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input {
+    display: block;
+    text-align: center;
+}
+
+.button {
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#output {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+#table{
+    margin: auto;
+    padding: 2px 2px;
+    font-size: large;
+    
+}
+#table td{
+    padding: 2px 2px;
+    font-size: large;
+    color: rebeccapurple;
+    font-weight: 300;
 }
