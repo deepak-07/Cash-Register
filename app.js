@@ -61,7 +61,7 @@ resetBtn.addEventListener("click", reset);
 function reset() {
     cash.value = "";
     bill.value = "";
-
+    change.innerText = "";
     while (mytable.rows.length > 1) {
         mytable.deleteRow(1);
     }
