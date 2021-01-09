@@ -6,33 +6,36 @@
     <meta charset="UTF-8">
     <title>Get Cash</title>
     <link rel="stylesheet" href="style.css">
-    
+
 
 </head>
 
 <body>
     <h1>Cash Register</h1>
+    <div class="container">
 
-    <div class="input">
-        <span class="side-heading"> Bill : </span> <input id="cost-input" placeholder="   Enter Bill Amount">
-        <span class="side-heading"> Paid: </span><input id="paid-input" placeholder="   Enter Cash Amount">
-    </div>
-
-    <button class="button" id="btn"> Check 
-    </button>
-    <button class="button" id="resetBtn"> Reset </button>
-    <div id="output">
-        <span id="changeAmount" ></span>
         <h3>Get minimum number of notes</h3>
-        <table id="table">
-            <tr>
-                <th> Note </th>
-                <th> Count </th>
-            </tr>
-           
-        </table>
-    </div>
 
+        <div class="input">
+            <span class="side-heading"> Bill : </span> <input id="cost-input" placeholder="   Enter Bill Amount">
+            <span class="side-heading"> Paid: </span><input id="paid-input" placeholder="   Enter Cash Amount">
+        </div>
+
+        <button class="button" id="btn"> Check 
+    </button>
+        <button class="button" id="resetBtn"> Reset </button>
+        <div id="output">
+            <span id="changeAmount"></span>
+
+            <table id="table">
+                <tr>
+                    <th> Note </th>
+                    <th> Count </th>
+                </tr>
+
+            </table>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
