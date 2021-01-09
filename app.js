@@ -1,42 +1,56 @@
-var cash = document.querySelector("#amt-paid");
-var bill = document.querySelector("#bill-amt");
-var calculate = document.querySelector("#btn");
-var output = document.querySelector(".output");
-var nofnotes = document.getElementsByClassName("noOfNotes");
+var cash = document.querySelector("#paid-input");
+var bill = document.querySelector("#cost-input");
+var btn = document.querySelector("#btn");
+var mytable = document.querySelector("#table");
+var otpt = document.querySelector("#output");
 
-var noteDb = ['2000', '500', '200', '100', '50', '20', '10', '5', '2', '1'];
+var notearray = ['2000', '500', '100', '50', '20', '10', '5', '2', '1'];
 
 var cashamount;
 var billamount;
 var totalchange;
+var noOfNotes = [];
 //getting value of input
-cash.addEventListener("change", () => {
+cash.addEventListener("change", function() {
     cashamount = cash.value;
 })
 
-bill.addEventListener("change", () => {
+bill.addEventListener("change", function() {
     billamount = bill.value;
 })
 
-totalchange = bill - cashamount;
+btn.addEventListener("click", calc);
 
-function clickHandler() {
-    if (totalchange < 0) {
-        alert("You Have to pay"+ mod(totalchange) +"More !!" );
-    } else if (cashamount === billamount) {
-        alert("Thanku !! You Have Paid Right Amount !");
-    } else if (totalchange > 0) {
-        output.innerHTML = totalchange;
-        for (i = 0; i <= noteDb.length; i++) {
-            if (totalchange >= noteDb[i]) {
-                var notes = Math.floor(totalchange / noteDb[i])
-                nofnotes[i].innerHTML = notes;
-                console.log(notes);
-                totalchange = totalchange % noteDb[i];
+function calc() {
+    if (cashamount === undefined || billamount === undefined) {
+        alert("Please enter the amount");
+    } else {
+        var totalchange = cashamount - billamount;
+        console.log(billamount, cashamount, totalchange);
+
+        if (totalchange < 0) {
+            alert("You Have to pay " + Math.abs(totalchange) +" More !!");
+        } else if (cashamount === billamount) {
+            alert("Thanku !! You Have Paid Right Amount !");
+        } else if (totalchange > 0) {
+            var j = 1;
+            for (i = 0; i <= notearray.length; i++) {
+                while (totalchange >= notearray[i]) {
+                    var notes = Math.floor(totalchange / notearray[i])
+                    console.log(`${notes} notes of ${notearray[i]}`)
+    
+                    console.log(noOfNotes);
+                    var row = mytable.insertRow(j);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    cell1.innerText = notearray[i];
+                    cell2.innerText = notes;
+                    j++;
+                    totalchange = totalchange - notes * notearray[i];
+                }
             }
-        }
 
+        }
+      
     }
 }
-
-calculate.addEventListener("click", clickHandler);

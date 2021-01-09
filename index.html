@@ -1,24 +1,40 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cash Register</title>
+    <link rel="icon" href="rupee-sign-solid.svg">
+    <title>Get Cash</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
 </head>
 
 <body>
     <h1>Cash Register</h1>
+
     <div class="input">
-        <input class="inputBox" id="bill-amt" placeholder="Enter your bill amount" /> 
-        <input class="inputBox" id="amt-paid" placeholder="Enter the cash you paid" />
-        <button id="btn">Calculate</button>
+        <input id="cost-input" placeholder="   Enter Bill">
+        <input id="paid-input" placeholder="   Enter Cash">
     </div>
-    <div class="output">
-        <div class="noOfNotes"></div>
+
+    <button class="button" id="btn"> Check 
+    </button>
+
+    <div id="output">
+        <table id="table">
+            <tr>
+                <th> Note</th>
+                <th> Count</th>
+            </tr>
+            <tr></tr>
+
+        </table>
     </div>
+
+
+    <script src="app.js"></script>
 </body>
-<script src="app.js"></script>
 
 </html>
