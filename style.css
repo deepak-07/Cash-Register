@@ -8,20 +8,27 @@ body {
 }
 
 .head {
-    display: block;
+    display: inline;
+    ;
 }
 
 .head li {
-    
     float: right;
     display: inline;
-    padding: 2px 20px;
+    padding: 10px 20px;
 }
 
 .head li a {
     font-weight: bolder;
     color: #1E3A8A;
     text-decoration: none;
+}
+
+img {
+    
+    display: inline;
+    max-width: 50px;
+    max-height: 50px;
 }
 
 .container {
