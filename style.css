@@ -9,7 +9,7 @@ body {
 
 .head {
     display: inline;
-    ;
+    
 }
 
 .head li {
@@ -52,7 +52,7 @@ img {
 h1 {
     color: #1D4ED8;
     /* display: inline; */
-    line-height: 200px;
+    line-height: 160px;
     height: 50px;
     padding-top: 50px;
     text-align: center;
