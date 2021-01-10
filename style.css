@@ -40,12 +40,14 @@ img {
     max-width: 500px;
     padding: 70px 20px;
     color: #1E3A8A;
+    font-size: large;
 }
 
 @media all and (max-width: 980px) {
     .container {
         margin-left: 0px;
         left: 0vh;
+        font-size: large;
     }
 }
 
