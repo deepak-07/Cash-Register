@@ -1,7 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 body {
-    background-color: lightblue;
-    background-image: url(/images/pic2.jpg);
-    background-size: 85%;
+    /* background-color: rgb(215, 233, 240); */
+    background-image: url(/images/pic1.jpg);
+    background-size: 120vh 100vh;
+    background-repeat: no-repeat;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.head {
+    display: block;
+}
+
+.head li {
+    
+    float: right;
+    display: inline;
+    padding: 2px 20px;
+}
+
+.head li a {
+    font-weight: bolder;
+    color: #1E3A8A;
+    text-decoration: none;
 }
 
 .container {
@@ -9,18 +29,26 @@ body {
     margin: auto;
     width: 600px;
     height: 300px;
-    right: 50px;
-    /* border: 3px solid green; */
+    right: 10%;
+    max-width: 500px;
     padding: 70px 20px;
+    color: #1E3A8A;
+}
+
+@media all and (max-width: 980px) {
+    .container {
+        margin-left: 0px;
+        left: 0vh;
+    }
 }
 
 h1 {
+    color: #1D4ED8;
     /* display: inline; */
     line-height: 200px;
     height: 50px;
     padding-top: 50px;
     text-align: center;
-    
 }
 
 .input {
@@ -29,10 +57,14 @@ h1 {
 }
 
 .button {
+    color: #1E3A8A;
+    font-size: large;
+    font-weight: bold;
     display: block;
     text-align: center;
     margin: auto;
     margin-top: 10px;
+    border-radius: 8px;
 }
 
 #output {
@@ -42,6 +74,7 @@ h1 {
 }
 
 h3 {
+    color: #1D4ED8;
     text-align: center;
 }
 
@@ -54,6 +87,6 @@ h3 {
 #table td {
     padding: 2px 2px;
     font-size: large;
-    color: white;
+    color: #1E3A8A;
     font-weight: 300;
 }

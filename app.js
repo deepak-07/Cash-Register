@@ -35,7 +35,7 @@ function calc() {
         } else if (cashamount === billamount) {
             alert("Thanku !! You Have Paid Right Amount !");
         } else if (totalchange > 0) {
-            change.innerText = "Return change : " +
+            change.innerText = "Return change : " + "₹ "+
             totalchange;
             var j = 1;
             for (i = 0; i <= notearray.length; i++) {
