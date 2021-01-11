@@ -43,11 +43,12 @@ img {
     font-size: large;
 }
 
-@media all and (max-width: 980px) {
+@media all and (max-width: 680px) {
     .container {
         margin-left: 0px;
         left: 0vh;
-        font-size: large;
+        font-size: larger;
+        
     }
 }
 

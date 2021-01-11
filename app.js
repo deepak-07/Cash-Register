@@ -8,6 +8,7 @@ var resetBtn = document.querySelector("#resetBtn");
 var notearray = ['2000', '500', '200', '100', '50', '20', '10', '5', '2', '1'];
 
 var cashamount;
+console.log(cashamount);
 var billamount;
 var totalchange;
 
@@ -21,15 +22,16 @@ bill.addEventListener("change", function() {
 })
 
 btn.addEventListener("click", calc);
+resetBtn.style.display = "none";
+otpt.style.display = "none";
 
 //processing and output
 function calc() {
     if (cashamount === undefined || billamount === undefined) {
         alert("Please enter the amount");
-    }
-    else if(cashamount <0 || billamount < 0){
+    } else if (cashamount < 0 || billamount < 0) {
         alert("Taking credit is not good")
-    
+
     } else {
         var totalchange = cashamount - billamount;
         console.log(billamount, cashamount, totalchange);
@@ -39,8 +41,8 @@ function calc() {
         } else if (cashamount === billamount) {
             alert("Thanku !! You Have Paid Right Amount !");
         } else if (totalchange > 0) {
-            change.innerText = "Return change : " + "₹ "+
-            totalchange;
+            change.innerText = "Return change : " + "₹ " +
+                totalchange;
             var j = 1;
             for (i = 0; i <= notearray.length; i++) {
                 while (totalchange >= notearray[i]) {
@@ -58,6 +60,8 @@ function calc() {
         }
 
     }
+    resetBtn.style.display = "block";
+    otpt.style.display = "block";
 }
 
 resetBtn.addEventListener("click", reset);
@@ -69,4 +73,6 @@ function reset() {
     while (mytable.rows.length > 1) {
         mytable.deleteRow(1);
     }
+    otpt.style.display = "none";
+    resetBtn.style.display = "none";
 }
