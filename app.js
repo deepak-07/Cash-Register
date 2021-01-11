@@ -26,6 +26,10 @@ btn.addEventListener("click", calc);
 function calc() {
     if (cashamount === undefined || billamount === undefined) {
         alert("Please enter the amount");
+    }
+    else if(cashamount <0 || billamount < 0){
+        alert("Taking credit is not good")
+    
     } else {
         var totalchange = cashamount - billamount;
         console.log(billamount, cashamount, totalchange);
