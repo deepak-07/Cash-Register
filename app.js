@@ -12,18 +12,23 @@ console.log(cashamount);
 var billamount;
 var totalchange;
 
+btn.style.display = "none";
+resetBtn.style.display = "none";
+otpt.style.display = "none";
+
 //getting value of input
 cash.addEventListener("change", function() {
     cashamount = cash.value;
+
 })
 
 bill.addEventListener("change", function() {
     billamount = bill.value;
+    btn.style.display = "block";
 })
 
 btn.addEventListener("click", calc);
-resetBtn.style.display = "none";
-otpt.style.display = "none";
+
 
 //processing and output
 function calc() {
