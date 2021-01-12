@@ -35,7 +35,7 @@ function calc() {
     if (cashamount === undefined || billamount === undefined) {
         alert("Please enter the amount");
     } else if (cashamount < 0 || billamount < 0) {
-        alert("Taking credit is not good")
+        alert("Taking credit is not good");
 
     } else {
         var totalchange = cashamount - billamount;
@@ -46,12 +46,15 @@ function calc() {
         } else if (cashamount === billamount) {
             alert("Thanku !! You Have Paid Right Amount !");
         } else if (totalchange > 0) {
-            change.innerText = "Return change : " + "₹ " +
-                totalchange;
+            change.innerText = "Return change : " + "₹ " + totalchange;
+            
+            while (mytable.rows.length > 1) {
+                mytable.deleteRow(1);
+            }
             var j = 1;
             for (i = 0; i <= notearray.length; i++) {
                 while (totalchange >= notearray[i]) {
-                    var notes = Math.floor(totalchange / notearray[i])
+                    var notes = Math.floor(totalchange / notearray[i]);
                     var row = mytable.insertRow(j);
                     var cell1 = row.insertCell(0);
                     var cell2 = row.insertCell(1);
